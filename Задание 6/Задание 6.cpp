@@ -1,4 +1,4 @@
-﻿// Задание 1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Задание 6.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 using namespace std;
 #include <iostream>
@@ -6,9 +6,11 @@ using namespace std;
 int main()
 {
 	setlocale(0, "");
-	const int n = 3, m = 4;
-	int a[n][m];
-	int max = a[0][0];
+	int k;
+	cout << "Введите число от 0 до 10: ";
+	cin >> k;
+	const int n = 2, m = 5;
+	int a[n][m] = {};
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
@@ -18,18 +20,19 @@ int main()
 		}
 		cout << endl;
 	}
-
+	cout << "\n";
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
 		{
-			if (a[i][j] > max)
+			if (a[i][j] < k)
 			{
-				max = a[i][j];
+				a[i][j] = k;
 			}
+			cout << a[i][j] << " ";
 		}
+		cout << endl;
 	}
-	cout << "Максиммальный элемент массива = " << max << endl;
 	return 0;
 }
 

@@ -1,37 +1,31 @@
-﻿// Задание 1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Задание 3.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 using namespace std;
-#include <iostream>
+#include <iostream> 
 
 int main()
 {
 	setlocale(0, "");
-	const int n = 3, m = 4;
-	int a[n][m];
-	int max = a[0][0];
+	const int n = 3;
+	int a[n][n];
+	int sum = 0;
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < m; j++)
+		for (int j = 0; j < n; j++)
 		{
 			a[i][j] = rand() % 10;
 			cout << a[i][j] << " ";
 		}
 		cout << endl;
 	}
-
 	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			if (a[i][j] > max)
-			{
-				max = a[i][j];
-			}
-		}
-	}
-	cout << "Максиммальный элемент массива = " << max << endl;
+		for (int j = 0; j < n; j++)
+			if (i == j)
+				sum = sum + a[i][j];
+	cout << "Сумма элементов главной диагонали = " << sum << endl;
 	return 0;
 }
+
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"

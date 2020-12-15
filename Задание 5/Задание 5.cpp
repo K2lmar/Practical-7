@@ -1,14 +1,14 @@
-﻿// Задание 1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Задание 5.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
+
 using namespace std;
 #include <iostream>
 
 int main()
 {
 	setlocale(0, "");
-	const int n = 3, m = 4;
-	int a[n][m];
-	int max = a[0][0];
+	const int n = 2, m = 5;
+	int a[n][m] = {};
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
@@ -18,18 +18,16 @@ int main()
 		}
 		cout << endl;
 	}
-
+	int nechet = 0;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
-		{
-			if (a[i][j] > max)
+			if (a[i][j] % 2 != 0)
 			{
-				max = a[i][j];
+				nechet++;
 			}
-		}
 	}
-	cout << "Максиммальный элемент массива = " << max << endl;
+	cout << "Количество нечетных элементов массива: " << nechet << endl;
 	return 0;
 }
 
